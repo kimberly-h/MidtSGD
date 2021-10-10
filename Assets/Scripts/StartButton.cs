@@ -7,6 +7,6 @@ public class StartButton : MonoBehaviour
 {
     public void OnStartButton_Pressed()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("lemongrab");
     }
 }

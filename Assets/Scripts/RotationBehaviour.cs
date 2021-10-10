@@ -11,6 +11,7 @@ public class RotationBehaviour : MonoBehaviour
     public float rotationSmoothTime = 0.1f;
     float rotationSmoothVelocity;
 
+
     Animator animations; 
 
     private void Start()
@@ -42,4 +43,16 @@ public class RotationBehaviour : MonoBehaviour
             animations.SetBool("Walk", false);
         }
     }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "COINS")
+        {
+            gameObject.GetComponent<CoinHitScore>().points++;
+            Destroy(col.gameObject);
+        }
+
+    }
+
+
 }
